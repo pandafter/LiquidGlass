@@ -1,69 +1,62 @@
-# React + TypeScript + Vite
-
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
-
-Currently, two official plugins are available:
-
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      ...tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      ...tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      ...tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+## ■ Liquid Glass UI
+**Liquid Glass UI** es una librería experimental de componentes UI inspirada en el estilo de vidrio
+líquido de iOS 26, pero optimizada para la web.
+### ■ Características
+- ■ 100% Web-Friendly, sin WebGL ni Three.js.
+- ■ Efecto vidrio líquido realista con bordes diagonales.
+- ■■ Switches draggeables con perilla de vidrio.
+- ■ Soporte de gradientes dinámicos.
+- ■ Responsivo y ligero.
+- ■ Optimizado para rendimiento.
+### ■ Instalación
+```bash
+git clone https://github.com/tuusuario/liquid-glass-ui.git
+cd liquid-glass-ui
+npm install
 ```
-
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default tseslint.config([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### ■ Ejemplo de IOS26Button
+```tsx
+<IOS26Button
+ accent="auto"
+ autoAccent
+ radius={24}
+ centerBlur={1}
+ edgeBlur={8}
+ vignette={0.62}
+ feather={34}
+>
+ Continuar
+</IOS26Button>
 ```
+### ■ Ejemplo de GlassBedButton
+```tsx
+<GlassBedButton width="8rem" height="3.25rem" bedColor="#22c55e22" glowColor="#22c55e55" radius={24}>
+ <div className="px-4 py-2">Guardar</div>
+</GlassBedButton>
+```
+### ■ Ejemplo de GlassBedSwitch
+```tsx
+<GlassBedSwitch
+ checked={wifi}
+ onChange={setWifi}
+ bedOn="#22c55e33"
+ bedOff="#ffffff18"
+ glowOn="#22c55e55"
+ glowOff="transparent"
+/>
+```
+### ■ Roadmap
+- [ ] Publicar como paquete npm.
+- [ ] Ampliar componentes (inputs, modals).
+- [ ] Crear playground con Storybook.
+- [ ] Mejorar accesibilidad (focus, ARIA).
+### ■ Historia del Proyecto
+El proyecto nació como un experimento con **Three.js**, utilizando displacement maps y materiales
+3D para lograr un efecto de vidrio líquido realista. Sin embargo, el rendimiento era inadecuado para
+entornos web. Liquid Glass UI surge como una reinterpretación 2D/2.5D que logra mantener la estética
+sin comprometer la velocidad.
+### ■ Licencia
+Este proyecto es open source bajo licencia MIT.
+### ■■■ Autores
+- Nicolas Leyva
+- Sebastian Rodriguez
