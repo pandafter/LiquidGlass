@@ -27,6 +27,7 @@ type GlassBedSwitchProps = {
   thumbEdgeBlur?: number;   // px
   thumbVignette?: number;   // 0..1
   thumbFeather?: number;    // px
+thumbCenterWidth?: number;
 };
 
 export default function GlassBedSwitch({
@@ -49,6 +50,7 @@ export default function GlassBedSwitch({
   glowOn = "#22c55e55",
   glowOff = "transparent",
   // valores suaves para “piedra pulida”
+  thumbCenterWidth = 28,
   thumbCenterBlur = 1,
   thumbEdgeBlur = 8,
   thumbVignette = 0.62,
@@ -151,7 +153,7 @@ export default function GlassBedSwitch({
           top: padding,
           left: 0,
           x,
-          width: thumbSize,
+          width: thumbCenterWidth,
           height: thumbSize,
           borderRadius: thumbSize / 2,
         }}

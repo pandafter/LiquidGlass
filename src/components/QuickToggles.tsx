@@ -34,6 +34,7 @@ export default function QuickToggles({
               onChange={it.onChange}
               width={68}
               thumbSize={28}
+              thumbCenterWidth={28}
               bedOn={it.bedOn ?? "#22c55e33"}
               bedOff={it.bedOff ?? "#ffffff18"}
               bgColor={it.value ? it.bgColorOn : it.bgColorOff}
